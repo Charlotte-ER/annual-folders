@@ -1,7 +1,6 @@
-
 param(
     [Parameter()]
-    [String] $path = "C:\Users\Charlotte!\Documents\code\annual-folders\TestFileStructure - Copy"
+    [String] $path = 'C:\Users\'+ $Env:username + '\Documents'
 )
 
 Function Create-AnnualSubfolder($path)
@@ -12,7 +11,7 @@ Function Create-AnnualSubfolder($path)
     # Get last calendar year
     [string] $lastYear = $currentYear-1
 
-    # Loop through all of the folders under TestFileStructure
+    # Loop through all of the folders under target File Structure
     Get-ChildItem  -Path $path -Recurse -Directory |
 
     # Find folders relating to last year
